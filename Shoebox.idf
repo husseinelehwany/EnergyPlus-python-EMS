@@ -486,6 +486,16 @@ Schedule:Constant,
     ,                        !- Schedule Type Limits Name
     1;                       !- Hourly Value
 
+Schedule:Constant,
+    hSP,                     !- Name
+    ,                        !- Schedule Type Limits Name
+    18;                      !- Hourly Value
+
+Schedule:Constant,
+    cSP,                     !- Name
+    ,                        !- Schedule Type Limits Name
+    27;                      !- Hourly Value
+
 
 !-   ===========  ALL OBJECTS IN CLASS: MATERIAL ===========
 
@@ -978,10 +988,10 @@ Lights,
 
 HVACTemplate:Thermostat,
     Constant Setpoint Thermostat,  !- Name
-    ,                        !- Heating Setpoint Schedule Name
-    22,                      !- Constant Heating Setpoint {C}
-    ,                        !- Cooling Setpoint Schedule Name
-    23.5;                    !- Constant Cooling Setpoint {C}
+    hSP,                     !- Heating Setpoint Schedule Name
+    ,                        !- Constant Heating Setpoint {C}
+    cSP,                     !- Cooling Setpoint Schedule Name
+    ;                        !- Constant Cooling Setpoint {C}
 
 
 !-   ===========  ALL OBJECTS IN CLASS: HVACTEMPLATE:ZONE:VAV ===========
