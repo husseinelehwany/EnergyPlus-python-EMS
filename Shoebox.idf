@@ -1,4 +1,4 @@
-!-Generator IDFEditor 1.51
+!-Generator IDFEditor 1.53
 !-Option SortedOrder
 
 !-NOTE: All comments with '!-' are ignored by the IDFEditor and are generated automatically.
@@ -8,7 +8,7 @@
 !-   ===========  ALL OBJECTS IN CLASS: VERSION ===========
 
 Version,
-    9.6;                     !- Version Identifier
+    23.1;                    !- Version Identifier
 
 
 !-   ===========  ALL OBJECTS IN CLASS: SIMULATIONCONTROL ===========
@@ -1110,7 +1110,7 @@ Output:Variable,
 
 Output:Variable,
     *,                       !- Key Value
-    Zone Thermostat Heating Setpoint Temperature,  !- Variable Name
+    Site Outdoor Air Drybulb Temperature,  !- Variable Name
     Hourly;                  !- Reporting Frequency
 
 Output:Variable,
@@ -1120,7 +1120,7 @@ Output:Variable,
 
 Output:Variable,
     *,                       !- Key Value
-    Site Outdoor Air Drybulb Temperature,  !- Variable Name
+    Zone Thermostat Heating Setpoint Temperature,  !- Variable Name
     Hourly;                  !- Reporting Frequency
 
 
