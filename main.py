@@ -18,14 +18,15 @@ def my_callback_function(state):
             outdoorT_hndl = api.exchange.get_variable_handle(state,'Site Outdoor Air Drybulb Temperature', 'Environment')
             indoorT_hndl = api.exchange.get_variable_handle(state,'Zone Mean Air Temperature', 'Zone1')
             heat_coil_hndl = api.exchange.get_meter_handle(state,'HeatingCoils:EnergyTransfer')
-            if -1 in [heatingSch_hndl, coolingSch_hndl, indoorT_hndl, heat_coil_hndl]:
+            if -1 in [heatingSch_hndl, coolingSch_hndl,heatingSP_hndl,coolingSP_hndl, indoorT_hndl,outdoorT_hndl, heat_coil_hndl]:
                 sys.exit(1)
             handleDone = True
         else:
             return
     
     # exchange information with EnergyPlus
-    month = api.exchange.month(state) 
+    month = api.exchange.month(state)
+    time = api.exchange.current_time(state) 
     
     # read variables
     outdoor_temp = api.exchange.get_variable_value(state, outdoorT_hndl)
@@ -43,9 +44,12 @@ def my_callback_function(state):
     if month < 4 or month > 10:
         api.exchange.set_actuator_value(state, heatingSch_hndl, 1)
         api.exchange.set_actuator_value(state, coolingSch_hndl, 0)
+        
     else:
         api.exchange.set_actuator_value(state, heatingSch_hndl, 0)
         api.exchange.set_actuator_value(state, coolingSch_hndl, 1)
+        
+    
     
     
 
